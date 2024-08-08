@@ -1,0 +1,27 @@
+<label>Server Name</label>
+<!-- <input type="text"
+ class="nameServer"
+ (input) = "upDatenameServer($event)"> -->
+ <input type="text" [(ngModel)]="serverName" placeholder="Server Name">
+
+
+  <button class="btn" [disabled]="serverName === ''" (click)="serverName=''">Reset</button>
+
+
+ <!-- <p>{{servrName}}</p> -->
+<button class="btn"
+[disabled]="!allowNewServer"
+(click)="onCreat()">Add Server </button>
+<!-- <p [innerText]="allowNewServer">{{allowNewServer}}</p> -->
+ <p>{{masseg}}</p>
+ <app-server *ngFor="let server of servers" [serverName]="server"></app-server>
+ <hr>
+
+
+ <input type="text" [(ngModel)]="serverName" placeholder="Server Name">
+<button class="btn" [disabled]="!allowNewServer" (click)="onCreat()">Add Server</button>
+<button class="btn" [disabled]="serverName === ''" (click)="serverName=''">Reset</button>
+<p>{{ masseg }}</p>
+
+<app-server *ngFor="let server of servers" [serverName]="server"></app-server>
+
